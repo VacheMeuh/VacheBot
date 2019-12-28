@@ -132,4 +132,6 @@ client.on('message', message, channel => {
             .setTimestamp()
             .setFooter('Vache bot by 32Vache#6233')
         channel.send(helpEmbed);
+    }
+});
 client.login('token');
