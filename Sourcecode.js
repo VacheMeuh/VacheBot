@@ -123,15 +123,9 @@ client.on('message', message => {
         });
     }
 });
-client.on('message', message, channel => {
+client.on('message', message => {
     if (message.content === "/help") {
-        const helpEmbed = new Discord.RichEmbed()
-            .setColor('#0099ff')
-            .setTitle('List of commands')
-            .setDescription('\`/help\` : Shows this message.\n\`cat\` : Shows the funny cat gif\n\`ping\` : Pong!\n\`/ban @user\` : Ban an user (Requires BAN_MEMBERS permission to use)\n\`/kick @user\` : Kick an user (Requires KICK_MEMBERS permission to use)\n\`/mute @user\` : Mute an user indefinitively (Requires MANANGE_MESSAGES permission to use ; need to remove the Muted role from user to unmute)\n\`/rolemute\` : Set overrides for the muted role (Must be used once for the mute command to work!)')
-            .setTimestamp()
-            .setFooter('Vache bot by 32Vache#6233')
-        channel.send(helpEmbed);
+        message.channel.send('\`/help\` : Shows this message.\n\`cat\` : Shows the funny cat gif\n\`ping\` : Pong!\n\`/ban @user\` : Ban an user (Requires BAN_MEMBERS permission to use)\n\`/kick @user\` : Kick an user (Requires KICK_MEMBERS permission to use)\n\`/mute @user\` : Mute an user indefinitively (Requires MANANGE_MESSAGES permission to use ; need to remove the Muted role from user to unmute)\n\`/rolemute\` : Set overrides for the muted role (Must be used once for the mute command to work!)')
     }
 });
 client.login('token');
